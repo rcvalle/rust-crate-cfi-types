@@ -14,6 +14,7 @@
 //! with the Clang `-fsanitize-cfi-icall-experimental-normalize-integers` option
 //! for cross-language LLVM CFI support.
 
+#![feature(cfg_sanitizer_cfi)]
 #![feature(cfi_encoding)]
 #![allow(non_camel_case_types)]
 
