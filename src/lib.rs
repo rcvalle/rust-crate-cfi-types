@@ -19,166 +19,78 @@
 #![allow(non_camel_case_types)]
 
 /// CFI type equivalent to Rust's core::ffi::c_char type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_char(pub core::ffi::c_char);
-
-/// CFI type equivalent to Rust's core::ffi::c_char type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "c"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "c")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_char(pub core::ffi::c_char);
 
 /// CFI type equivalent to Rust's core::ffi::c_int type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_int(pub core::ffi::c_int);
-
-/// CFI type equivalent to Rust's core::ffi::c_int type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "i"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "i")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_int(pub core::ffi::c_int);
 
 /// CFI type equivalent to Rust's core::ffi::c_long type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_long(pub core::ffi::c_long);
-
-/// CFI type equivalent to Rust's core::ffi::c_long type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "l"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "l")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_long(pub core::ffi::c_long);
 
 /// CFI type equivalent to Rust's core::ffi::c_longlong type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_longlong(pub core::ffi::c_longlong);
-
-/// CFI type equivalent to Rust's core::ffi::c_longlong type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "x"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "x")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_longlong(pub core::ffi::c_longlong);
 
 /// CFI type equivalent to Rust's core::ffi::c_schar type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_schar(pub core::ffi::c_schar);
-
-/// CFI type equivalent to Rust's core::ffi::c_schar type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "a"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "a")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_schar(pub core::ffi::c_schar);
 
 /// CFI type equivalent to Rust's core::ffi::c_short type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_short(pub core::ffi::c_short);
-
-/// CFI type equivalent to Rust's core::ffi::c_short type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "s"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "s")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_short(pub core::ffi::c_short);
 
 /// CFI type equivalent to Rust's core::ffi::c_uchar type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_uchar(pub core::ffi::c_uchar);
-
-/// CFI type equivalent to Rust's core::ffi::c_uchar type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "h"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "h")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_uchar(pub core::ffi::c_uchar);
 
 /// CFI type equivalent to Rust's core::ffi::c_uint type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_uint(pub core::ffi::c_uint);
-
-/// CFI type equivalent to Rust's core::ffi::c_uint type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "j"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "j")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_uint(pub core::ffi::c_uint);
 
 /// CFI type equivalent to Rust's core::ffi::c_ulong type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_ulong(pub core::ffi::c_ulong);
-
-/// CFI type equivalent to Rust's core::ffi::c_ulong type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "m"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "m")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_ulong(pub core::ffi::c_ulong);
 
 /// CFI type equivalent to Rust's core::ffi::c_ulonglong type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_ulonglong(pub core::ffi::c_ulonglong);
-
-/// CFI type equivalent to Rust's core::ffi::c_ulonglong type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "y"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "y")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_ulonglong(pub core::ffi::c_ulonglong);
 
 /// CFI type equivalent to Rust's core::ffi::c_ushort type alias.
-#[cfg(sanitizer_cfi_normalize_integers)]
 #[allow(dead_code)]
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-#[repr(transparent)]
-pub struct c_ushort(pub core::ffi::c_ushort);
-
-/// CFI type equivalent to Rust's core::ffi::c_ushort type alias.
-#[cfg(not(sanitizer_cfi_normalize_integers))]
-#[allow(dead_code)]
-#[cfi_encoding = "t"]
+#[cfg_attr(not(sanitizer_cfi_normalize_integers), cfi_encoding = "t")]
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
 #[repr(transparent)]
 pub struct c_ushort(pub core::ffi::c_ushort);
